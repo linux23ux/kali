@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV USER=root
 
 RUN apt-get update && \
-    apt-get install -y kali-desktop-xfce-core tightvncserver websockify novnc wget procps curl dbus-x11 && \
+    apt-get install -y kali-desktop-xfce tigervnc-standalone-server websockify novnc wget curl dbus-x11 && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN ln -s /usr/share/novnc/vnc.html /usr/share/novnc/index.html
