@@ -10,7 +10,5 @@ RUN apt-get update && \
 
 RUN ln -s /usr/share/novnc/vnc.html /usr/share/novnc/index.html
 
-EXPOSE 8080
-
 # Chạy chuỗi lệnh rút gọn của bạn, sleep 3s, rồi kích hoạt websockify
 CMD ["/bin/bash", "-c", "rm -rf /tmp/.X11-unix/X1 /tmp/.X*-lock && vncserver -SecurityTypes None -xstartup /usr/bin/startxfce4 :1 && sleep 3 && websockify --web=/usr/share/novnc/ ${PORT:-8080} localhost:5901"]
